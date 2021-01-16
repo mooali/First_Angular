@@ -6,6 +6,7 @@ import {MatInputModule} from '@angular/material/input';
 
 
 import { AppComponent } from './app.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { AppComponent } from './app.component';
     BrowserModule,
     BrowserAnimationsModule,
     MatCheckboxModule,
-    MatInputModule
+    MatInputModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

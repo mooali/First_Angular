@@ -11,7 +11,8 @@ export class AppComponent {
   num = 1;
   nam = 'some';
   // tslint:disable-next-line:typedef
-  onKey(event: any){
-    this.title = event.target.value;
+  onChange(event: any){
+    // tslint:disable-next-line:triple-equals
+    event.target.value ? this.title = event.target.value : this.title = 'write something in the input field to change this label';
   }
 }
