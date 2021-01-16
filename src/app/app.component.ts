@@ -6,12 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angularCLI';
+  title = 'write something in the input field to change this label';
   isChecked = true;
+  num = 1;
 
   // tslint:disable-next-line:typedef
-  onChange($event){
-    this.title = 'ITS WORKED';
+  onChange(somethign){
+    this.num++;
+    this.title = somethign + this.num;
     console.log('HelloWorld');
   }
 }

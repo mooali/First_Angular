@@ -1,7 +1,6 @@
-<mat-checkbox
-  [value]=""
-  [checked]="isChecked"
-  (change) = "onChange($event)"
->{{title}}
-</mat-checkbox>
-
+<div>
+  <mat-label>{{title}}</mat-label>
+  <mat-input-container>
+    <input type="text" matInput placeholder="Test" (change)="onChange('AAAAAA')">
+  </mat-input-container>
+</div>
