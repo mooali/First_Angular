@@ -1,6 +1,8 @@
-<div>
-  <mat-label>{{title}}</mat-label>
+<md-input-container>
+  <mat-label>
+    {{title}}
+  </mat-label>
   <mat-input-container>
-    <input type="text" matInput placeholder="Test" (change)="onChange('AAAAAA')">
+    <input type="text" matInput (change)="onKey($event)">
   </mat-input-container>
-</div>
+</md-input-container>

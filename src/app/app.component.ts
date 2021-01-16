@@ -9,11 +9,9 @@ export class AppComponent {
   title = 'write something in the input field to change this label';
   isChecked = true;
   num = 1;
-
+  nam = 'some';
   // tslint:disable-next-line:typedef
-  onChange(somethign){
-    this.num++;
-    this.title = somethign + this.num;
-    console.log('HelloWorld');
+  onKey(event: any){
+    this.title = event.target.value;
   }
 }
