@@ -13,6 +13,6 @@ export class AppComponent {
   // tslint:disable-next-line:typedef
   onChange(event: any){
     // tslint:disable-next-line:triple-equals
-    event.target.value ? this.title = event.target.value : this.title = 'write something in the input field to change this label';
+    event.target.value ? this.title = event.currentTarget.value : this.title = 'write something in the input field to change this label';
   }
 }
