@@ -1,8 +1,7 @@
-<div>
-  <h1>Welcome to my first {{title}} application</h1>
-  <mat-slider
-    thumbLabel
-    tickInterval="1000"
-    min="3"
-    max="100000"></mat-slider>
-</div>
+<mat-checkbox
+  [value]=""
+  [checked]="isChecked"
+  (change) = "onChange($event)"
+>{{title}}
+</mat-checkbox>
+

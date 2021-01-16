@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angularCLI';
+  isChecked = true;
+
+  // tslint:disable-next-line:typedef
+  onChange($event){
+    this.title = 'ITS WORKED';
+    console.log('HelloWorld');
+  }
 }
