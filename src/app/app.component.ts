@@ -43,7 +43,7 @@ export class AppComponent {
     this.title = this.title = 'write something in the input field to change this label';
   }
   // tslint:disable-next-line:typedef
-  onChange(id) {
+  onChange(id: number) {
     for (const todo of this.todos){
       if (id === todo.id){
         todo.completed ? todo.completed = false : todo.completed = true;

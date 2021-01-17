@@ -1,5 +1,5 @@
 <mat-tab-group (selectedTabChange)="resetLabel()">
-  <mat-tab label="Changeable Lable">
+  <mat-tab label="Changeable Label">
       <mat-form-field floatLabel="always" appearance="fill">
         <mat-label>{{title}}</mat-label>
         <input matInput (change)="updateLabel($event)" [formControl]="textValidate">
