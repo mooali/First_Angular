@@ -1,12 +1,17 @@
-<mat-tab-group>
-  <mat-tab label="Angular">
-    <div id="main-input">
+<mat-tab-group (selectedTabChange)="restLabel()">
+  <mat-tab label="Magical Input">
       <mat-form-field floatLabel="always" appearance="fill">
         <mat-label>{{title}}</mat-label>
-        <input matInput type="text" (keypress)="onChange($event)">
+        <input matInput (keypress)="onKeyPressed($event)" [formControl]="textValidate">
+        <mat-error *ngIf="textValidate.invalid"> INVALID INPUT</mat-error>
       </mat-form-field>
-    </div>
   </mat-tab>
-  <mat-tab label="ToDo">something</mat-tab>
+  <mat-tab label="ToDo">
+    <mat-list>
+      <mat-list-item *ngFor="let todo of todos">
+        <mat-checkbox (change)="onChange(todo.id)">{{todo.title}}</mat-checkbox>
+      </mat-list-item>
+    </mat-list>
+  </mat-tab>
 </mat-tab-group>
 

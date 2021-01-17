@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {FormControl, Validators} from '@angular/forms';
+import {Todo} from './models/Todo';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +9,49 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'write something in the input field to change this label';
-  isChecked = true;
-  num = 1;
-  nam = 'some';
+  textValidate = new FormControl('', [Validators.pattern('^[a-zA-Z0-9 ]*$')]);
+  todos: Todo[] = [
+    {
+      id: 1,
+      title: 'Study for IT-Sec exam',
+      completed: false
+    },
+    {
+      id: 2,
+      title: 'Solve Task 1',
+      completed: false
+    },
+    {
+      id: 3,
+      title: 'Solve Task 2',
+      completed: false
+    },
+    {
+      id: 4,
+      title: 'the 1 hour daily walk',
+      completed: false
+    },
+  ];
+
   // tslint:disable-next-line:typedef
-  onChange(event: any){
-    // tslint:disable-next-line:triple-equals
-    event.target.value ? this.title = event.currentTarget.value : this.title = 'write something in the input field to change this label';
+  onKeyPressed(event: any) {
+    if (this.textValidate.hasError('text')) {
+      return 'you must enter a valid value';
+    }
+    return event.target.value ? this.title = event.target.value : this.title = 'write something in the input field to change this label';
+  }
+
+  // tslint:disable-next-line:typedef
+  restLabel() {
+    this.title = this.title = 'write something in the input field to change this label';
+  }
+  // tslint:disable-next-line:typedef
+  onChange(id) {
+    for (const todo of this.todos){
+      if (id === todo.id){
+        todo.completed ? todo.completed = false : todo.completed = true;
+      }
+    }
   }
 }
+
