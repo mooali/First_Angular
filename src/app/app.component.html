@@ -1,12 +1,13 @@
-<mat-tab-group (selectedTabChange)="restLabel()">
-  <mat-tab label="Magical Input">
+<mat-tab-group (selectedTabChange)="resetLabel()">
+  <mat-tab label="Changeable Lable">
       <mat-form-field floatLabel="always" appearance="fill">
         <mat-label>{{title}}</mat-label>
-        <input matInput (keypress)="onKeyPressed($event)" [formControl]="textValidate">
+        <input matInput (change)="updateLabel($event)" [formControl]="textValidate">
+        <mat-hint>After typing click anywhere outside the Input Field or press "Enter"</mat-hint>
         <mat-error *ngIf="textValidate.invalid"> INVALID INPUT</mat-error>
       </mat-form-field>
   </mat-tab>
-  <mat-tab label="ToDo">
+  <mat-tab label="ToDos">
     <mat-list>
       <mat-list-item *ngFor="let todo of todos">
         <mat-checkbox (change)="onChange(todo.id)">{{todo.title}}</mat-checkbox>

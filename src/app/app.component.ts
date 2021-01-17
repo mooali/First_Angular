@@ -34,15 +34,12 @@ export class AppComponent {
   ];
 
   // tslint:disable-next-line:typedef
-  onKeyPressed(event: any) {
-    if (this.textValidate.hasError('text')) {
-      return 'you must enter a valid value';
-    }
-    return event.target.value ? this.title = event.target.value : this.title = 'write something in the input field to change this label';
+  updateLabel(event: any) {
+    event.target.value ? this.title = event.target.value : this.title = 'write something in the input field to change this label';
   }
 
   // tslint:disable-next-line:typedef
-  restLabel() {
+  resetLabel() {
     this.title = this.title = 'write something in the input field to change this label';
   }
   // tslint:disable-next-line:typedef
