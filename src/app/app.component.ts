@@ -8,7 +8,8 @@ import {Todo} from './models/Todo';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'write something in the input field to change this label';
+  defaultTitle = 'write something in the input field to change this label';
+  title = this.defaultTitle;
   /**
    * accept only Alphanumeric input and spaces
    */
@@ -40,7 +41,7 @@ export class AppComponent {
   /**
    * this will update the label based on the user input.
    * if the label is empty, lebel will reset on it's initial title
-   * @param event
+   * @param event any event
    */
   // tslint:disable-next-line:typedef
   updateLabel(event: any) {
@@ -64,7 +65,7 @@ export class AppComponent {
   onChange(id: number) {
     for (const todo of this.todos){
       if (id === todo.id){
-        todo.completed ? todo.completed = false : todo.completed = true;
+        todo.completed = !todo.completed;
       }
     }
   }
