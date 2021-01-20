@@ -45,7 +45,7 @@ export class AppComponent {
    */
   // tslint:disable-next-line:typedef
   updateLabel(event: any) {
-    event.target.value ? this.title = event.target.value : this.title = 'write something in the input field to change this label';
+    event.target.value ? this.title = event.target.value : this.title = this.defaultTitle;
   }
 
   /**
@@ -54,7 +54,7 @@ export class AppComponent {
    */
   // tslint:disable-next-line:typedef
   resetLabel() {
-    this.title = this.title = 'write something in the input field to change this label';
+    this.title = this.defaultTitle;
   }
 
   /**
